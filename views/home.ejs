@@ -1,0 +1,40 @@
+<!--views/home.ejs -->
+<!doctype html>
+<html>
+<head>
+    <title>user profile</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!--load bootstrap css -->
+    <link rel="stylesheet" href=
+    "//netdna.bootstrapcdn.com/font-awsome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <style>
+    	body   {padding-top:80px;}
+    </style>
+</head>
+<body>
+<p>Welcome Home Page</p>
+
+<div class="table-responsive">
+<table class="table table-hover">
+<tr>
+<th>User Name</th>
+<th>Full Name</th>
+<th>Address</th>
+<th>Date Of Birth</th>
+<th>Image </th>
+<th>Actions</th>
+<th></th>
+<th></th>
+</tr>
+<tr ng-repeat="detail in details| filter:search_query">
+<td> <%= user.local.email %> </td>
+<td><%= user.local.name %> </td>
+<td> <%= user.local.address %> </td>
+<td><%= user.local.dateofbirth %> </td>
+<td><%= user.local.image %> </td>
+
+<td><a href="/profile" class="btn btn-primary">Edit</a>&nbsp;
+<button type="submit" class="btn btn-primary">Delete</button>
+</tr>
+
+</body>
+</html>
